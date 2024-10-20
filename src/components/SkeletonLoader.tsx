@@ -1,10 +1,23 @@
 import React from 'react';
 import './SkeletonLoader.css';
 
-function SkeletonLoader(){
+export interface Props {
+    height : string;
+    width : string;
+    borderRadius : string;
+}
+
+function SkeletonLoader(props: Props){
+    const {height='100%', width='100%', borderRadius='5px'} = props;
     return (
-        <div className='outer-box'>
-            <div className='loader-box'></div>
+        <div 
+            className='loader-box'
+            style={{
+                height,
+                width,
+                borderRadius,
+            }}
+        >
         </div>
     );
 }
